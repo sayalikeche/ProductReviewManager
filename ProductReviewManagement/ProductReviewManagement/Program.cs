@@ -25,6 +25,9 @@ namespace ProductReviewManagement
                 new Review() { ProductID = 9, UserID = 9, Rating = 5, Revieww = "A++", isLike = true },
                 new Review() { ProductID = 10, UserID = 10, Rating = 4, Revieww = "A", isLike = true }
             };
+            Management manage = new Management();
+            manage.SelectTopThreeRecords(ProductReviewlist);
+
         }
     }
 }
