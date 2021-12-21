@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,28 +32,6 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine(item.ProductID + "-----" + item.Count);
             }
-
         }
-        public void RetrieveProductIdAndReview(List<Review> ProductReviewlist)
-        {
-            var records = from productReview in ProductReviewlist
-                          select new { productReview.ProductID, productReview.Revieww };
-            foreach (var list in records)
-            {
-                Console.WriteLine("ProductId :" + list.ProductID + " " + "Review :" + list.Revieww);
-            }
-        }
-        public void SkipTopFiveRecords(List<Review> ProductReviewlist)
-        {
-            var records = (from product in ProductReviewlist orderby product.Rating descending select product).Skip(5).ToList();
-            Display(records);
-        }
-
     }
 }
-
-
-
-
-
-      

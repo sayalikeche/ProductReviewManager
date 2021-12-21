@@ -27,8 +27,13 @@ namespace ProductReviewManagement
             };
             Management manage = new Management();
             manage.SelectTopThreeRecords(ProductReviewlist);
-            manage.RetrieveRecordsUsingRatingAndProductId(ProductReviewlist);
+            
+           manage.RetrieveRecordsUsingRatingAndProductId(ProductReviewlist);
+            
             manage.RetrieveCountOfRecords(ProductReviewlist);
+            
+            manage.RetrieveProductIdAndReview(ProductReviewlist);
+            manage.SkipTopFiveRecords(ProductReviewlist);
         }
     }
 }
