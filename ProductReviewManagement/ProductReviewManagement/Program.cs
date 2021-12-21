@@ -34,6 +34,8 @@ namespace ProductReviewManagement
             
             manage.RetrieveProductIdAndReview(ProductReviewlist);
             manage.SkipTopFiveRecords(ProductReviewlist);
+
+            manage.RetrieveRecordsWhereIslikeTrue(ProductReviewlist);
         }
     }
 }
