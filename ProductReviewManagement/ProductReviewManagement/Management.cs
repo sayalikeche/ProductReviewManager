@@ -115,6 +115,24 @@ namespace ProductReviewManagement
                 Console.WriteLine(product.Field<int>("ProductId") + " " + product.Field<int>("UserId") + " " + product.Field<int>("Rating") + " " + product.Field<string>("Review") + " " + product.Field<bool>("isLike"));
             }
         }
+        public void RetrieveRecordsUserIdEqualToTen(List<Review> ProductReviewlist)
+        {
+            dataTable.Columns.Add("ProductId").DataType = typeof(Int32);
+            dataTable.Columns.Add("UserId").DataType = typeof(Int32);
+            dataTable.Columns.Add("Rating").DataType = typeof(Int32);
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("isLike").DataType = typeof(bool);
+            foreach (var item in ProductReviewlist)
+            {
+                dataTable.Rows.Add(item.ProductID, item.UserID, item.Rating, item.Revieww, item.isLike);
+            }
+            var productTable = from product in dataTable.AsEnumerable() where product.Field<int>("UserId") == 10 select product;
+
+            foreach (DataRow product in productTable)
+            {
+                Console.WriteLine(product.Field<int>("ProductId") + " " + product.Field<int>("UserId") + " " + product.Field<int>("Rating") + " " + product.Field<string>("Review") + " " + product.Field<bool>("isLike"));
+            }
+        }
 
     }
 }

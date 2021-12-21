@@ -37,6 +37,8 @@ namespace ProductReviewManagement
 
             manage.RetrieveRecordsWhereIslikeTrue(ProductReviewlist);
             manage.AverageProductId(ProductReviewlist);
+            manage.RetrieveRecordsWhereReviewnice(ProductReviewlist);
+            manage.RetrieveRecordsUserIdEqualToTen(ProductReviewlist);
 
         }
     }
